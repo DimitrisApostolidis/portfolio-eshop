@@ -7,8 +7,7 @@ export default async function SingleProductPage({ params }) {
   const resolvedParams = await params;
   const { slug } = resolvedParams; 
 
-  const WP_GRAPHQL_URL = 'http://portfolio-eshop-backend.local/graphql';
-
+  const WP_GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://dev-dimitris-eshop.pantheonsite.io/graphql';
   const query = `
     query GetProductBySlug($slug: ID!) {
       product(id: $slug, idType: SLUG) {
