@@ -6,7 +6,7 @@ export default async function SearchPage({ searchParams }) {
   const resolvedParams = await searchParams;
   const queryParam = resolvedParams?.q || '';
 
-  const WP_GRAPHQL_URL = 'http://portfolio-eshop-backend.local/graphql';
+  const WP_GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://dev-dimitris-eshop.pantheonsite.io/graphql';
 
   // GraphQL Query: Ζητάμε τα προϊόντα που περιέχουν τη λέξη αναζήτησης
   const query = `

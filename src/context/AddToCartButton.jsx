@@ -9,7 +9,7 @@ export default function AddToCartButton({ product }) {
 
   const handleAddToCart = async () => {
     setIsAdding(true);
-    const WP_GRAPHQL_URL = 'http://portfolio-eshop-backend.local/graphql'; // Το τοπικό σου URL
+    const WP_GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://dev-dimitris-eshop.pantheonsite.io/graphql';
 
     // Χρησιμοποιούμε mutation αντί για query για να γράψουμε δεδομένα
     const mutation = `
