@@ -44,7 +44,7 @@ const menuItems = [
 ];
 
 export default async function ProductsPage() {
-  const WP_GRAPHQL_URL = 'http://portfolio-eshop-backend.local/graphql';
+  const WP_GRAPHQL_URL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://dev-dimitris-eshop.pantheonsite.io/graphql';
 
   // Το query φέρνει πλέον μόνο τα προϊόντα (το μενού το έχουμε hardcoded)
   const query = `
